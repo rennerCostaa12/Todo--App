@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    background: rgb(2,0,36);
+    background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 12%, rgba(0,212,255,1) 89%);
+    background-repeat: no-repeat;
+    font-family: 'Josefin Sans', sans-serif;
+    overflow: hidden;
+}
+
+main{
+    text-align: center;
+}
+
+main h1{
+    color: rgb(235, 235, 235);
+    margin: 2rem 0;
+}
+
+main form input{
+    width: 300px;
+    height: 45px;
+    outline: none;
+    font-size: 16px;
+    padding-left: 0.2rem;
+}
+
+.content-list-todo{
+    margin: 2rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-list-todo ul{
+    list-style: none;
+    text-align: left;
+    overflow-y: inherit;
+}
+
+.content-list-todo ul li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 20px;
+    background-color: rgb(255, 255, 255);
+    padding: 0.5rem 0.5rem;
+    border: 1px solid black;
+}
+
+.content-list-todo ul li div{
+    margin-left: 2rem;
+}
+
+.content-list-todo ul li p{
+    display: inline-block;
+}
+
+.content-list-todo ul li button{
+    background: none;
+    border: 1px solid rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+    padding: 0.5rem;
+    margin-left: 0.2rem;
+    cursor: pointer;
+}
+
+.textChecked{
+    text-decoration: line-through;
+    color: grey;
+}
