@@ -5,45 +5,43 @@ const FieldInput = document.getElementById('field_input');
 FieldInput.addEventListener('keypress', (e) => {
     if (e.keyCode === 13) {
         e.preventDefault()
+        if (e.target.value == 0) {
+            alert('Digite a tarefa!')
+        } else {
+            let itemList = document.createElement('li');
+            let itemTask = document.createElement('p');
+            let buttonCheck = document.createElement('button');
+            let buttonDelete = document.createElement('button');
+            let containerBtns = document.createElement('div');
 
-        let itemList = document.createElement('li');
-        let itemTask = document.createElement('p');
-        let buttonCheck = document.createElement('button');
-        let buttonDelete = document.createElement('button');
-        let containerBtns = document.createElement('div');
+            itemTask.innerHTML = FieldInput.value;
+            buttonCheck.innerHTML = '<i class="fas fa-check"></i>';
+            buttonDelete.innerHTML = '<i class="fas fa-trash"></i>';
 
-        itemTask.innerHTML = FieldInput.value;
-        buttonCheck.innerHTML = '<i class="fas fa-check"></i>';
-        buttonDelete.innerHTML = '<i class="fas fa-trash"></i>';
+            containerBtns.appendChild(buttonCheck);
+            containerBtns.appendChild(buttonDelete);
 
-        containerBtns.appendChild(buttonCheck);
-        containerBtns.appendChild(buttonDelete);
+            itemList.appendChild(itemTask);
+            itemList.appendChild(containerBtns);
 
-        itemList.appendChild(itemTask);
-        itemList.appendChild(containerBtns);
+            ListContent.appendChild(itemList);
 
-        ListContent.appendChild(itemList);
+            buttonCheck.addEventListener('click', checkTask);
+            buttonDelete.addEventListener('click', deleteTask);
 
-        buttonCheck.addEventListener('click', checkTask);
-        buttonDelete.addEventListener('click', deleteTask);
+            FieldInput.value = '';
 
-        FieldInput.value = '';
+            function checkTask() {
+                itemTask.parentElement
+                itemTask.classList.toggle('textChecked')
+            }
 
-        function checkTask() {
-            itemTask.parentElement
-            itemTask.classList.toggle('textChecked')
-        }
-
-        function deleteTask() {
-            itemTask.parentElement
-            itemList.remove();
+            function deleteTask() {
+                itemTask.parentElement
+                itemList.remove();
+            }
         }
     }
-
-
-   
-
-    console.log(ListContent.clientHeight);
 })
 
 
